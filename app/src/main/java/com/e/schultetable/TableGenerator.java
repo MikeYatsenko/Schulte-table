@@ -6,36 +6,31 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TableGenerator {
     public Context context;
-    private int numberOfColumn;
+    private ModelConservation settings;
+
     ArrayList<ModelItem> items;
 
     public TableGenerator(Context context) {
         this.context = context;
         this.items = new ArrayList();
 
-        SharedPreferences sp;
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        numberOfColumn = Integer.parseInt(sp.getString("size", "-1"));
-//        Log.e("pref-mix", ""+sp.getBoolean("mix", false));
-//        Log.e("pref-hide", ""+sp.getBoolean("hide", false));
-//        Log.e("pref-switchingMethod", ""+sp.getBoolean("switchingMethod", false));
-//        Log.e("pref-textColor", ""+sp.getBoolean("textColor", false));
-//        Log.e("pref-bgColor", ""+sp.getBoolean("bgColor", false));
-//        Log.e("pref-animText", ""+sp.getBoolean("animText", false));
-//        Log.e("pref-rotItem", ""+sp.getBoolean("rotItem", false));
+        settings = new ModelConservation(context);
 
-        for (int i = 0; i < numberOfColumn*numberOfColumn; i++){
+
+
+        for (int i = 0; i < settings.numberOfColumn*settings.numberOfColumn; i++){
             items.add(new ModelItem(""+i));
         }
-
+        Collections.shuffle(items);
 
     }
 
     public int getNumberOfColumn(){
-        return numberOfColumn;
+        return settings.numberOfColumn;
     }
 
     public GridViewAdapter getGridAdapter(){
