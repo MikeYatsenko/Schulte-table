@@ -14,13 +14,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Switch;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+    GridView gridview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +40,15 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        GridView gridview = (GridView) findViewById(R.id.gridView1);
+        gridview = (GridView) findViewById(R.id.gridView1);
 
         TableGenerator generator = new TableGenerator(this);
 
         gridview.setAdapter(generator.getGridAdapter());
         gridview.setNumColumns(generator.getNumberOfColumn());
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(this);
     }
 
     @Override
@@ -102,5 +107,14 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button:{
+                ((GridViewAdapter)gridview.getAdapter()).dataSetChanged();
+            }break;
+        }
     }
 }
