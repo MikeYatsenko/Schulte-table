@@ -7,14 +7,18 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_test">Тест</string>
+    <string name="menu_pref">Настрокйки</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <string-array name="tableSize">
+
+
+    <string name="pre_size_title">Размер таблицы</string>
+    <string name="pre_size_subtitle">Вы можете выбрать сложность теста</string>
+    <string-array name="pre_tableSize">
         <item>3*3</item>
         <item>4*4</item>
         <item>5*5</item>
@@ -24,7 +28,7 @@
         <item>9*9</item>
         <item>10*10</item>
     </string-array>
-    <string-array name="tableSizeValues">
+    <string-array name="pre_tableSizeValues">
         <item>3</item>
         <item>4</item>
         <item>5</item>
@@ -34,4 +38,20 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+    <string name="pre_mix_title">Перемешивать</string>
+    <string name="pre_mix_subtitle">После каждого клика перемешивать элементы</string>
+    <string name="pre_hide_title">Скрывать выбранные</string>
+    <string name="pre_hide_subtitle">Убирать выбранные элементы</string>
+    <string name="pre_switching_method_title">Переключения</string>
+    <string name="pre_switching_method_subtitle">Кликайте по кнопке не отвлекаять на нажатия</string>
+    <string name="pre_switching_text_color_title">Цвет текста</string>
+    <string name="pre_switching_text_color_subtitle">Усложните задачу разноцветным текстом</string>
+    <string name="pre_switching_bg_color_title">Цвет фона</string>
+    <string name="pre_switching_bg_color_subtitle">Усложните задачу разноцветным фоном</string>
+    <string name="pre_switching_anim_text_title">Анимация текста</string>
+    <string name="pre_switching_anim_text_subtitle">Плавное движение текста элемента</string>
+    <string name="pre_switching_rot_item_title">Анимация фона</string>
+    <string name="pre_switching_rot_item_subtitle">Плавное вращение элементов</string>
+    <string name="pre_group_title_color">Цвет</string>
+    <string name="pre_group_title_anim">Анимация</string>
 </resources>

@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <ListPreference
-        android:entries="@array/tableSize"
-        android:entryValues="@array/tableSizeValues"
+        android:entries="@array/pre_tableSize"
+        android:entryValues="@array/pre_tableSizeValues"
         android:key="size"
-        android:summary="Вы можете выбрать сложность теста"
-        android:title="Размер таблицы">
+        android:summary="@string/pre_size_subtitle"
+        android:title="@string/pre_size_title">
     </ListPreference>
     <CheckBoxPreference
-        android:key="switchingMethod"
-        android:summary="Кликайте по кнопке не отвлекаять на нажатия"
-        android:title="Переключения">
+        android:key="mix"
+        android:summary="@string/pre_mix_subtitle"
+        android:title="@string/pre_mix_title">
     </CheckBoxPreference>
     <CheckBoxPreference
-        android:key="address"
-        android:summary="Усложните задачу разноцветным текстом"
-        android:title="Цвет текста">
+        android:key="hide"
+        android:summary="@string/pre_hide_subtitle"
+        android:title="@string/pre_hide_title">
     </CheckBoxPreference>
+    <CheckBoxPreference
+        android:key="switchingMethod"
+        android:summary="@string/pre_switching_method_subtitle"
+        android:title="@string/pre_switching_method_title">
+    </CheckBoxPreference>
+    <PreferenceCategory android:title="@string/pre_group_title_color" >
+        <CheckBoxPreference
+            android:key="textColor"
+            android:summary="@string/pre_switching_text_color_subtitle"
+            android:title="@string/pre_switching_text_color_title">
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:key="bgColor"
+            android:summary="@string/pre_switching_bg_color_subtitle"
+            android:title="@string/pre_switching_bg_color_title">
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pre_group_title_anim" >
+        <CheckBoxPreference
+            android:key="animText"
+            android:summary="@string/pre_switching_anim_text_subtitle"
+            android:title="@string/pre_switching_anim_text_title">
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:key="rotItem"
+            android:summary="@string/pre_switching_rot_item_subtitle"
+            android:title="@string/pre_switching_rot_item_title">
+        </CheckBoxPreference>
+    </PreferenceCategory>
 </PreferenceScreen>
