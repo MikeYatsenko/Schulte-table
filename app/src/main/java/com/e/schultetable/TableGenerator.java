@@ -34,6 +34,6 @@ public class TableGenerator {
     }
 
     public GridViewAdapter getGridAdapter(){
-        return new GridViewAdapter(context, items);
+        return new GridViewAdapter(context, items, settings);
     }
 }

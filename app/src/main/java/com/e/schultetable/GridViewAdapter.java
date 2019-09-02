@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class GridViewAdapter  extends BaseAdapter {
+    private ModelConservation settings;
     private ArrayList<ModelItem> tabItems;
     private Context context;
-    public GridViewAdapter(Context context, ArrayList<ModelItem> tabItems) {
+    public GridViewAdapter(Context context, ArrayList<ModelItem> tabItems, ModelConservation settings) {
+        this.settings = settings;
         this.tabItems = tabItems;
         this.context = context;
     }
@@ -54,7 +56,8 @@ public class GridViewAdapter  extends BaseAdapter {
             public void onClick(View view) {
                 Toast.makeText(context, "" + tabItems.get(position).getTitle(), Toast.LENGTH_SHORT).show();
                 (tabItems.get(position)).invisibility();
-                Collections.shuffle(tabItems);
+                if(settings.shuffleCollection)
+                    Collections.shuffle(tabItems);
                 dataSetChanged();
             }
         });
