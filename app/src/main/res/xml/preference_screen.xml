@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:entries="@array/tableSize"
+        android:entryValues="@array/tableSizeValues"
+        android:key="size"
+        android:summary="Вы можете выбрать сложность теста"
+        android:title="Размер таблицы">
+    </ListPreference>
     <CheckBoxPreference
-        android:key="notif"
-        android:summary="Enable notifications"
-        android:title="Notifications">
+        android:key="switchingMethod"
+        android:summary="Кликайте по кнопке не отвлекаять на нажатия"
+        android:title="Переключения">
     </CheckBoxPreference>
-    <EditTextPreference
+    <CheckBoxPreference
         android:key="address"
-        android:summary="Address for notifications"
-        android:title="Address">
-    </EditTextPreference>
+        android:summary="Усложните задачу разноцветным текстом"
+        android:title="Цвет текста">
+    </CheckBoxPreference>
 </PreferenceScreen>
