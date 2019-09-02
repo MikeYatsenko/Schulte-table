@@ -36,19 +36,14 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        ArrayList<ModelItem> items = new ArrayList();
-        for (int i = 0; i < 25; i++){
-            items.add(new ModelItem(""+i));
-        }
+
 
         GridView gridview = (GridView) findViewById(R.id.gridView1);
-        gridview.setAdapter(new GridViewAdapter(getApplicationContext(), items));
-        gridview.setNumColumns(5);
 
+        TableGenerator generator = new TableGenerator(this);
 
-
-
-
+        gridview.setAdapter(generator.getGridAdapter());
+        gridview.setNumColumns(generator.getNumberOfColumn());
     }
 
     @Override
